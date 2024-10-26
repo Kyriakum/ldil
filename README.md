@@ -6,7 +6,7 @@
 
 - ### [Features](#features)
 - ### [License](#license)
-- ### [To Dos](#to dos)
+- ### [ToDos](#todos)
 
 <hr>
 
@@ -44,7 +44,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <hr>
 
-## To Dos
+## ToDos
 
 <hr>
 
