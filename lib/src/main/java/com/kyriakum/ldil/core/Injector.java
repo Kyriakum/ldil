@@ -14,7 +14,7 @@ public final class Injector {
     private final MappingService mappingService;
     private final DependencyProvider dependencyProvider;
 
-    public Injector(@NotNull DependencyProvider dependencyProvider){
+    public Injector(@NotNull final DependencyProvider dependencyProvider){
         this.mappingService = new MappingService();
         this.dependencyProvider = dependencyProvider;
     }
@@ -23,7 +23,7 @@ public final class Injector {
         return mappingService;
     }
 
-    public <T> T createInstance(@NotNull Class<T> clasz){
+    public <T> T createInstance(@NotNull final Class<T> clasz){
         try {
             T instance = clasz.getDeclaredConstructor().newInstance();
             injectDependencies(instance);
@@ -33,7 +33,7 @@ public final class Injector {
         }
     }
 
-    private void injectDependencies(@NotNull Object instance){
+    private void injectDependencies(@NotNull final Object instance){
         Class<?> clasz = instance.getClass();
 
         for(Field field : clasz.getDeclaredFields()){

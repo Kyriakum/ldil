@@ -11,11 +11,11 @@ public final class StrategyRegistry {
 
     private final Map<Class<? extends Annotation>, InstanceProviderStrategy> strategyMap = new HashMap<>();
 
-    public void registerStrategy(@NotNull Class<? extends Annotation> annotationType, @NotNull InstanceProviderStrategy strategySupplier){
+    public void registerStrategy(@NotNull final Class<? extends Annotation> annotationType, @NotNull final InstanceProviderStrategy strategySupplier){
         strategyMap.putIfAbsent(annotationType,strategySupplier);
     }
 
-    public @Nullable InstanceProviderStrategy getStrategyByAnnotation(@NotNull Class<? extends Annotation> annotation){
+    public @Nullable InstanceProviderStrategy getStrategyByAnnotation(@NotNull final Class<? extends Annotation> annotation){
         return strategyMap.get(annotation);
     }
 }

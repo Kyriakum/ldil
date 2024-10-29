@@ -10,7 +10,7 @@ public final class ConfigLoader {
 
     private final Properties properties = new Properties();
 
-    public ConfigLoader(@NotNull String fileName){
+    public ConfigLoader(@NotNull final String fileName){
         try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName)){
             if(inputStream == null){
                 throw new RuntimeException("Unable to find file " + fileName);
@@ -21,7 +21,7 @@ public final class ConfigLoader {
         }
     }
 
-    public String getProperty(@NotNull String key){
+    public String getProperty(@NotNull final String key){
         return properties.getProperty(key);
     }
 }

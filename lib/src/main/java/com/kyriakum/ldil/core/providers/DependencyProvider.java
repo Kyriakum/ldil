@@ -18,7 +18,7 @@ public final class DependencyProvider {
         StrategyLoader.loadStrategies(strategyRegistry);
     }
 
-    public <T> T provideDependency(@NotNull Class<T> clasz) throws StrategyInitializationException {
+    public <T> T provideDependency(@NotNull final Class<T> clasz) throws StrategyInitializationException {
         if(clasz.getDeclaredAnnotations().length > 0){
             for(Annotation anno : clasz.getDeclaredAnnotations()){
                 InstanceProviderStrategy strat = strategyRegistry.getStrategyByAnnotation(anno.annotationType());

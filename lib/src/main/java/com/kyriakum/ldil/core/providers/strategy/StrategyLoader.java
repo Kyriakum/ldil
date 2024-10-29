@@ -12,7 +12,7 @@ import java.util.Set;
 
 public final class StrategyLoader {
 
-    public static void loadStrategies(@NotNull StrategyRegistry registry){
+    public static void loadStrategies(@NotNull final StrategyRegistry registry){
 
         Reflections reflections = new Reflections(InternalsConfig.STRATEGY_PATH);
 
@@ -24,12 +24,11 @@ public final class StrategyLoader {
             } else {
                 // If no available annotation, default to prototype.
                 registry.registerStrategy(Prototype.class, createStrategy(clasz));
-
             }
         }
     }
 
-    private static InstanceProviderStrategy createStrategy(@NotNull Class<? extends InstanceProviderStrategy> strategyType){
+    private static InstanceProviderStrategy createStrategy(@NotNull final Class<? extends InstanceProviderStrategy> strategyType){
         try {
             return strategyType.getDeclaredConstructor().newInstance();
         } catch (InvocationTargetException e) {

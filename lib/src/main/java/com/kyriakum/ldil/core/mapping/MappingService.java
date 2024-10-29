@@ -12,7 +12,7 @@ public final class MappingService {
 
     private final Map<Class<?>, Class<?>> interfaceToClassMap = new HashMap<>();
 
-    public <T> void bindClassToClass(@NotNull Class<T> interfaceType,@NotNull Class<? extends T> concreteType){
+    public <T> void bindClassToClass(@NotNull final Class<T> interfaceType,@NotNull final Class<? extends T> concreteType){
 
         if(interfaceType == null || concreteType == null){
             throw new RuntimeException("Passed null reference");

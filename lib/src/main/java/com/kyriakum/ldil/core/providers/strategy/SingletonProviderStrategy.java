@@ -14,11 +14,11 @@ public final class SingletonProviderStrategy implements InstanceProviderStrategy
     private final Map<Class<?>, Object> singletonMap = new HashMap<>();
 
     @Override
-    public <T> T provideInstance(@NotNull Class<T> clasz) {
+    public <T> T provideInstance(@NotNull final Class<T> clasz) {
         return (T) singletonMap.computeIfAbsent(clasz, this::instantiate);
     }
 
-    public <T> T instantiate(@NotNull Class<T> clasz) {
+    public <T> T instantiate(@NotNull final Class<T> clasz) {
         try {
             return clasz.getDeclaredConstructor().newInstance();
         } catch (InvocationTargetException | NoSuchMethodException | InstantiationException | IllegalAccessException e) {

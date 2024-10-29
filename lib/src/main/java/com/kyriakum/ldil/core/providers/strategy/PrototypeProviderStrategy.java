@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 public final class PrototypeProviderStrategy implements InstanceProviderStrategy {
 
     @Override
-    public <T> T provideInstance(@NotNull Class<T> clasz) {
+    public <T> T provideInstance(@NotNull final Class<T> clasz) {
         try {
             return clasz.getDeclaredConstructor().newInstance();
         } catch (InvocationTargetException e) {

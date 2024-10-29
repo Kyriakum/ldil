@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class StrategyInitializationException extends Exception {
 
-    public StrategyInitializationException(@NotNull String message){
+    public StrategyInitializationException(@NotNull final String message){
         super(message);
     }
 
