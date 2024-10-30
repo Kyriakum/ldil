@@ -2,6 +2,8 @@ package com.kyriakum.ldil.core.providers.strategy;
 
 import com.kyriakum.ldil.annotations.objecttype.Prototype;
 import com.kyriakum.ldil.annotations.strategy.StrategySupported;
+import com.kyriakum.ldil.core.providers.strategy.registry.IStrategyRegistry;
+import com.kyriakum.ldil.core.providers.strategy.registry.StrategyRegistry;
 import com.kyriakum.ldil.utils.InternalsConfig;
 import org.jetbrains.annotations.NotNull;
 import org.reflections.Reflections;
@@ -12,7 +14,7 @@ import java.util.Set;
 
 public final class StrategyLoader {
 
-    public static void loadStrategies(@NotNull final StrategyRegistry registry){
+    public static void loadStrategies(@NotNull final IStrategyRegistry registry){
 
         Reflections reflections = new Reflections(InternalsConfig.STRATEGY_PATH);
 

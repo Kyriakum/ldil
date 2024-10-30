@@ -3,15 +3,16 @@ package com.kyriakum.ldil.core.providers;
 import com.kyriakum.ldil.annotations.objecttype.Prototype;
 import com.kyriakum.ldil.core.providers.strategy.InstanceProviderStrategy;
 import com.kyriakum.ldil.core.providers.strategy.StrategyLoader;
-import com.kyriakum.ldil.core.providers.strategy.StrategyRegistry;
+import com.kyriakum.ldil.core.providers.strategy.registry.IStrategyRegistry;
+import com.kyriakum.ldil.core.providers.strategy.registry.StrategyRegistry;
 import com.kyriakum.ldil.exceptions.StrategyInitializationException;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.annotation.Annotation;
 
-public final class DependencyProvider {
+public final class DependencyProvider implements IDependencyProvider {
 
-    private final StrategyRegistry strategyRegistry;
+    private final IStrategyRegistry strategyRegistry;
 
     public DependencyProvider(){
         strategyRegistry = new StrategyRegistry();

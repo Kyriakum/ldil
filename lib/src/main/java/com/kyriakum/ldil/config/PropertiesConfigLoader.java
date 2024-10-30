@@ -1,4 +1,4 @@
-package com.kyriakum.ldil.utils;
+package com.kyriakum.ldil.config;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public final class ConfigLoader {
+public final class PropertiesConfigLoader implements IConfigLoader {
 
     private final Properties properties = new Properties();
 
-    public ConfigLoader(@NotNull final String fileName){
+    public PropertiesConfigLoader(@NotNull final String fileName){
         try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName)){
             if(inputStream == null){
                 throw new RuntimeException("Unable to find file " + fileName);
@@ -21,7 +21,7 @@ public final class ConfigLoader {
         }
     }
 
-    public String getProperty(@NotNull final String key){
+    public String getItem(@NotNull final String key){
         return properties.getProperty(key);
     }
 }

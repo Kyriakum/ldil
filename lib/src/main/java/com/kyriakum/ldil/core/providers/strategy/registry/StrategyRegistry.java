@@ -1,5 +1,6 @@
-package com.kyriakum.ldil.core.providers.strategy;
+package com.kyriakum.ldil.core.providers.strategy.registry;
 
+import com.kyriakum.ldil.core.providers.strategy.InstanceProviderStrategy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -7,7 +8,7 @@ import java.lang.annotation.Annotation;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class StrategyRegistry {
+public final class StrategyRegistry implements IStrategyRegistry {
 
     private final Map<Class<? extends Annotation>, InstanceProviderStrategy> strategyMap = new HashMap<>();
 

@@ -3,18 +3,19 @@ package com.kyriakum.ldil.core;
 import com.kyriakum.ldil.annotations.Inject;
 import com.kyriakum.ldil.core.mapping.MappingService;
 import com.kyriakum.ldil.core.providers.DependencyProvider;
+import com.kyriakum.ldil.core.providers.IDependencyProvider;
 import com.kyriakum.ldil.exceptions.StrategyInitializationException;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
-public final class Injector {
+public final class Injector implements IInjector {
 
     private final MappingService mappingService;
-    private final DependencyProvider dependencyProvider;
+    private final IDependencyProvider dependencyProvider;
 
-    public Injector(@NotNull final DependencyProvider dependencyProvider){
+    public Injector(@NotNull final IDependencyProvider dependencyProvider){
         this.mappingService = new MappingService();
         this.dependencyProvider = dependencyProvider;
     }
