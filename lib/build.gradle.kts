@@ -8,7 +8,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
-    kotlin("jvm") version "1.8.0"
+    kotlin("jvm") version "2.1.0"
 }
 
 repositories {
