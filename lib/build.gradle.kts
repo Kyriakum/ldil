@@ -24,7 +24,7 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains/annotations
-    implementation("org.jetbrains:annotations:26.0.1")
+    implementation("org.jetbrains:annotations:26.0.2")
     implementation("org.reflections:reflections:0.10.2")
 }
 
